@@ -1,10 +1,9 @@
-#!/usr/bin/python
-#-*- coding: utf-8 -*-
+from abc import ABC
 
-class ElementoMapa:
+
+class ElementoMapa(ABC):
     def __init__(self):
         pass
 
-    def entrar(self, ):
+    def entrar(self):
         pass
-

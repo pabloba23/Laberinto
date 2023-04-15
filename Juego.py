@@ -1,42 +1,60 @@
 #!/usr/bin/python
-#-*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 
 from Laberinto import Laberinto
 from Habitacion import Habitacion
 from Puerta import Puerta
 from Pared import Pared
 
+
 class Juego:
-    def__init__(self):
-	self.laberinto=None
-	
+    def __init__(self):
+        self.laberinto = None
+
     def fabricarLaberinto(self):
-	return Laberinto()
+        return Laberinto()
 
-    def laberinto2HabitacionFM(self):
-	self.laberinto=self.fabricarLaberinto()
+    def fabricarPared(self):
+        return Pared()
 
-    def laberinto2Habitaciones(self):
-	self.laberinto=Laberinto()
-	
-	hab1=Habitacion(1)
-	hab2=Habitacion(2)
-	
-	puerta=Puerta()
-	puerta.lado1=hab1
-	puerta.lado2=hab2
+    def fabricarPuerta(self, lado1, lado2, abierta):
+        puerta = Puerta(lado1, lado2, abierta)
+        return puerta
 
-	hab1.norte=Pared()
-	hab1.este=Pared()
-	hab1.oeste=Pared()
+    def fabricarHab(self, num):
+        habitacion = Habitacion(num)
+        habitacion.este = self.fabricarPared
+        habitacion.oeste = self.fabricarPared
+        habitacion.sur = self.fabricarPared
+        habitacion.norte = self.fabricarPared
+        return habitacion
 
-	hab2.sur=Pared()
-	hab2.este=Pared()
-	hab2.oeste=Pared()
+    def laberinto2Hab(self):
+        hab1 = self.fabricarHab(1)
+        hab2 = self.fabricarHab(2)
 
-	self.laberinto.agregarHabitacion(hab1)
-	self.laberinto.agregarHabitacion(hab2)´
+        puerta = self.fabricarPuerta(hab1,hab2,'true')
 
-juego=Juego()
-juego.laberinto2Habitaciones()
-	
+        hab1.sur=puerta
+        hab2.norte=puerta
+
+        laberinto=self.fabricarLaberinto()
+        laberinto.agregarHabitacion(hab1)
+        laberinto.agregarHabitacion(hab2)
+
+
+        print("En que habitacion quieres empezar")
+        donde=input()
+
+        while(donde==0):
+            print("Habitacion no valida, en que habitacion quieres empezar")
+            donde=input()
+
+
+
+
+
+
+
+
+
