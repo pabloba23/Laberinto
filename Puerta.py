@@ -9,3 +9,9 @@ class Puerta(ElementoMapa):
         self.lado1 = None
         self.lado2 = None
 
+    def entrar(self):
+        if self.abierta is True:
+            print("La puerta esta abierta")
+        else:
+            print("La puerta esta cerrada")
+

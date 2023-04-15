@@ -4,6 +4,8 @@
 from Pared import Pared
 
 class ParedBomba(Pared):
-    def __init__(self):
-        self.activa = None
+    def __init__(self, activa):
+        self.activa = activa
 
+    def entrar(self):
+        print("Ha explotado la bomba de la pared")
