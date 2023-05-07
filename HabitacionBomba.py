@@ -1,9 +1,7 @@
-#!/usr/bin/python
-#-*- coding: utf-8 -*-
 
-from Habitacion import Habitación
+from Habitacion import Habitacion
 
-class HabitacionBomba(Habitación):
+class HabitacionBomba(Habitacion):
     def __init__(self):
         self.activa = None
 

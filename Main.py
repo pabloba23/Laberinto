@@ -1,4 +1,7 @@
-from Juego import Juego
+from Bomba import Bomba
+
+from Pared import Pared
+from Patiopruebas import Patiopruebas
 
 
 class Main:
@@ -6,5 +9,6 @@ class Main:
         self.name = name
 
 if __name__ == "__main__":
-    juego = Juego()
-    juego.laberinto = juego.laberinto2Hab()
+
+   pt=Patiopruebas()
+   pt.Menu()

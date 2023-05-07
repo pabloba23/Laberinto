@@ -1,7 +1,6 @@
-#!/usr/bin/python
-#-*- coding: utf-8 -*-
+from Hoja import Hoja
 
-from ElementoMapa import ElementoMapa
+class Decorator(Hoja):
 
-class Decorator(ElementoMapa):
-    pass
+    def entrar(self):
+        super().entrar()

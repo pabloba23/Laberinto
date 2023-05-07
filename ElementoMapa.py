@@ -6,4 +6,4 @@ class ElementoMapa(ABC):
         pass
 
     def entrar(self):
-        pass
+        print("Entrando a:")
