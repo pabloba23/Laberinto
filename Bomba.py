@@ -2,8 +2,9 @@ from Decorator import Decorator
 
 class Bomba(Decorator):
     def __init__(self,activa,EM):
+        super().__init__(EM)
         self.activa = activa
-        self.EM=EM
+
 
     def start(self):
         self.activa=False

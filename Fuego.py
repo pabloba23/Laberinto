@@ -3,7 +3,7 @@ from Decorator import Decorator
 class Fuego(Decorator):
 
     def __init__(self,EM):
-        self.EM=EM
+        self.EM=EM  
 
     def entrar(self):
         super().entrar()
